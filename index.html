@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <meta name="referrer" content="no-referrer">
+  <title>Money Tracker</title>
+  <meta name="description" content="Personal money tracker: salary, bills, expenses, savings and safe-to-spend until payday.">
+  <meta name="theme-color" content="#1d6b57" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121a17" media="(prefers-color-scheme: dark)">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Money">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="icons/icon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/app.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body class="locked">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="app-header">
+    <a href="#/home" class="brand" aria-label="Money Tracker home">
+      <img src="icons/icon-192.png" alt="" width="28" height="28">
+      <span>Money Tracker</span>
+    </a>
+    <nav class="side-nav" aria-label="Main">
+      <a href="#/home" data-nav="home" data-icon="home"><span>Home</span></a>
+      <a href="#/money" data-nav="money" data-icon="wallet"><span>Money</span></a>
+      <a href="#/bills" data-nav="bills" data-icon="bill"><span>Bills</span></a>
+      <a href="#/plan" data-nav="plan" data-icon="plan"><span>Plan</span></a>
+      <a href="#/insights" data-nav="insights" data-icon="chart"><span>Insights</span></a>
+    </nav>
+    <div class="header-actions">
+      <span id="sync-indicator" class="sync-ind" role="status" hidden></span>
+      <button class="icon-btn" data-action="lock" aria-label="Lock" title="Lock" data-icon="lock"></button>
+      <a class="icon-btn" href="#/settings" data-nav="settings" aria-label="Settings" title="Settings" data-icon="settings"></a>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <noscript><p class="center">Money Tracker needs JavaScript enabled.</p></noscript>
+  </main>
+
+  <button class="fab" data-action="quick-add" aria-label="Add a transaction" data-icon="plus"></button>
+
+  <nav class="tabbar" aria-label="Main">
+    <a href="#/home" data-nav="home" data-icon="home"><span>Home</span></a>
+    <a href="#/money" data-nav="money" data-icon="wallet"><span>Money</span></a>
+    <a href="#/bills" data-nav="bills" data-icon="bill"><span>Bills</span></a>
+    <a href="#/plan" data-nav="plan" data-icon="plan"><span>Plan</span></a>
+    <a href="#/insights" data-nav="insights" data-icon="chart"><span>Insights</span></a>
+  </nav>
+
+  <div id="update-banner" class="update-banner" hidden>
+    <span>A new version is ready.</span>
+    <button class="btn btn-small btn-primary" type="button">Reload</button>
+  </div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+</body>
+</html>
